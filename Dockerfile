@@ -30,10 +30,14 @@ RUN chown -R jenkins:jenkins /home/jenkins/.m2/
 
 RUN apt remove cmdtest
 RUN apt remove yarn
+
+RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update
-RUN apt-get install yarn nodejs npm -y
+RUN apt-get install yarn -y
 
 # Standard SSH port
 EXPOSE 22
