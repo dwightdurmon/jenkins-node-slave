@@ -1,2 +1,2 @@
 # jenkins-basic-slave
-Basic Jenkins Slave
+NodeJs/Yarn Jenkins Slave
